@@ -4,12 +4,11 @@ void vulnerable(char *user_input)
 {
         char vulnbuffer[256];
 
-        printf("\n [+] Entered into vulnerable function ... \n");
-        printf("\n [+] Memory Address of Commandline Input:  %p \n", user_input);
-        printf("Contents of user_input is: %s \n", user_input);
-
+        printf("\n [+] Memory Address of vulnbuffer string:  %p \n", vulnbuffer);
+        
         strcpy(vulnbuffer, user_input);         // Bad idea ... no bounds checking!
-
+        
+        printf("Contents of user_input is: %s \n", user_input);
         printf("Contents of vulnbuffer is: %s \n", vulnbuffer);
         return 0;
 }
